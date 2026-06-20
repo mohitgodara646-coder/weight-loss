@@ -1,0 +1,737 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>वनजा वेलनेस — दिन और रात का आयुर्वेदिक रूटीन</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#8B2635;
+    --maroon-dark:#6E1D2A;
+    --turmeric:#E8A33D;
+    --turmeric-dark:#C9842A;
+    --green:#3D6B47;
+    --green-dark:#2D4F35;
+    --cream:#FFF8EC;
+    --cream-deep:#FCEFD4;
+    --ink:#3A2317;
+    --ink-soft:rgba(58,35,23,0.68);
+    --line:rgba(139,38,53,0.16);
+    --whatsapp:#25D366;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Noto Sans Devanagari','Poppins',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    font-size:16px;
+  }
+  img{max-width:100%; display:block;}
+
+  h1,h2,h3,h4{
+    font-family:'Noto Sans Devanagari','Poppins',sans-serif;
+    font-weight:800;
+    color:var(--maroon);
+    line-height:1.2;
+  }
+
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+
+  .eyebrow{
+    display:inline-block;
+    font-size:13px; font-weight:700;
+    color:var(--maroon);
+    background:var(--turmeric);
+    padding:6px 16px;
+    border-radius:30px;
+    letter-spacing:0.01em;
+  }
+
+  a{color:inherit;}
+
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
+
+  /* ===== Top bar ===== */
+  .topbar{
+    background:var(--maroon);
+    border-bottom:3px solid var(--turmeric);
+    position:sticky; top:0; z-index:50;
+  }
+  .topbar-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px; max-width:1180px; margin:0 auto;
+  }
+  .logo{
+    font-size:24px; font-weight:800; color:#fff;
+    display:flex; align-items:center; gap:8px;
+  }
+  .logo .leaf{font-size:22px;}
+  .topbar-cta{
+    font-size:14px; font-weight:700;
+    background:var(--whatsapp); color:#fff;
+    padding:10px 18px; border-radius:30px;
+    text-decoration:none; display:flex; align-items:center; gap:7px;
+  }
+  .topbar-cta svg{width:16px; height:16px;}
+
+  /* ===== Top offer strip ===== */
+  .offer-strip{
+    background:var(--turmeric);
+    color:var(--maroon-dark);
+    text-align:center;
+    font-size:13.5px; font-weight:700;
+    padding:8px 12px;
+    letter-spacing:0.01em;
+  }
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;
+    padding:48px 24px 40px;
+    background:
+      radial-gradient(ellipse 700px 400px at 90% 0%, rgba(232,163,61,0.25), transparent),
+      var(--cream);
+  }
+  .hero-grid{
+    max-width:1180px; margin:0 auto;
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:40px; align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(28px, 4vw, 42px);
+    margin:14px 0 16px;
+  }
+  .hero h1 .accent{color:var(--green);}
+  .hero p.lede{
+    font-size:17px; line-height:1.7;
+    color:var(--ink-soft);
+    margin-bottom:22px;
+  }
+  .hero-points{
+    display:flex; flex-direction:column; gap:10px;
+    margin-bottom:26px;
+  }
+  .hero-point{
+    display:flex; align-items:center; gap:10px;
+    font-size:15px; font-weight:600; color:var(--maroon);
+  }
+  .hero-point .tick{
+    width:24px; height:24px; border-radius:50%;
+    background:var(--green); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px; flex-shrink:0;
+  }
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; align-items:center;}
+  .btn-primary{
+    background:var(--maroon);
+    color:#fff;
+    font-weight:700; font-size:16px;
+    padding:16px 30px;
+    border:none; border-radius:8px;
+    cursor:pointer;
+    box-shadow:0 8px 0 var(--maroon-dark);
+    transition:transform 0.12s ease;
+  }
+  .btn-primary:active{transform:translateY(4px); box-shadow:0 4px 0 var(--maroon-dark);}
+  .price-tag{
+    font-size:14px; color:var(--ink-soft);
+  }
+  .price-tag .now{font-size:20px; font-weight:800; color:var(--maroon);}
+  .price-tag .was{text-decoration:line-through; opacity:0.55; margin-left:6px;}
+
+  .hero-disclaimer{
+    margin-top:18px; font-size:12px; color:var(--ink-soft); line-height:1.6; max-width:480px;
+  }
+
+  .hero-visual{position:relative; aspect-ratio:1/1;}
+  .hero-visual svg{width:100%; height:100%;}
+  .hero-badge-float{
+    position:absolute; top:8%; left:-4%;
+    background:#fff; border:2px solid var(--turmeric);
+    border-radius:50%;
+    width:92px; height:92px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    box-shadow:0 10px 24px rgba(139,38,53,0.18);
+    text-align:center;
+  }
+  .hero-badge-float .n{font-size:18px; font-weight:800; color:var(--maroon);}
+  .hero-badge-float .l{font-size:9px; font-weight:700; color:var(--ink-soft);}
+
+  /* ===== Trust strip ===== */
+  .trust-strip{ background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .trust-strip .wrap{
+    display:flex; justify-content:center; gap:36px; flex-wrap:wrap;
+    padding:18px 24px;
+  }
+  .trust-item{ display:flex; align-items:center; gap:8px; font-size:13.5px; font-weight:700; color:var(--green-dark); }
+  .trust-item .ic{ width:34px; height:34px; border-radius:50%; background:var(--cream-deep); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .trust-item svg{width:18px; height:18px; color:var(--maroon);}
+
+  /* ===== Section shared ===== */
+  section{padding:56px 24px;}
+  .section-head{ max-width:680px; margin-bottom:36px; }
+  .section-head.center{margin-left:auto; margin-right:auto; text-align:center;}
+  .section-head h2{ font-size:clamp(24px,3vw,32px); margin-top:12px; }
+  .section-head p{ font-size:15.5px; line-height:1.7; color:var(--ink-soft); margin-top:12px; }
+
+  /* ===== Ritual (din/raat) ===== */
+  .ritual{background:var(--green-dark);}
+  .ritual .section-head h2{color:#fff;}
+  .ritual .section-head p{color:rgba(255,255,255,0.78);}
+  .ritual-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .ritual-card{
+    background:#fff;
+    border-radius:16px;
+    padding:30px 26px;
+    position:relative;
+    overflow:hidden;
+  }
+  .ritual-card::before{
+    content:""; position:absolute; top:0; left:0; right:0; height:6px;
+  }
+  .ritual-card.day::before{background:var(--turmeric);}
+  .ritual-card.night::before{background:var(--maroon);}
+  .ritual-card .icon-circle{
+    width:58px; height:58px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:18px; font-size:28px;
+  }
+  .ritual-card.day .icon-circle{background:#FFF1D6;}
+  .ritual-card.night .icon-circle{background:#F6DCE0;}
+  .ritual-card .time{
+    font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--turmeric-dark); display:block; margin-bottom:4px;
+  }
+  .ritual-card.night .time{color:var(--maroon);}
+  .ritual-card h3{font-size:21px; margin-bottom:10px;}
+  .ritual-card p{font-size:14.5px; line-height:1.7; color:var(--ink-soft);}
+
+  /* ===== Ingredients ===== */
+  .ingredients{background:var(--cream);}
+  .ing-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+  .ing-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:24px 18px;
+    text-align:center;
+    transition:transform 0.2s ease;
+  }
+  .ing-card:hover{transform:translateY(-5px);}
+  .ing-card .ring{
+    width:76px; height:76px; border-radius:50%;
+    background:linear-gradient(135deg, var(--turmeric), var(--maroon));
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 16px;
+    font-size:30px;
+  }
+  .ing-card .origin-pill{
+    display:inline-block; font-size:11px; font-weight:700;
+    background:var(--cream-deep); color:var(--green-dark);
+    padding:3px 12px; border-radius:20px; margin-bottom:10px;
+  }
+  .ing-card h4{font-size:16px; margin-bottom:8px;}
+  .ing-card p{font-size:13px; line-height:1.6; color:var(--ink-soft);}
+
+  /* ===== Benefits ===== */
+  .benefits{background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .benefits-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+  .benefit-cell{
+    background:var(--cream);
+    border-radius:14px;
+    padding:26px 20px;
+    text-align:center;
+  }
+  .benefit-cell .ic-wrap{
+    width:50px; height:50px; border-radius:14px;
+    background:var(--maroon); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 14px;
+  }
+  .benefit-cell .ic-wrap svg{width:24px; height:24px;}
+  .benefit-cell h4{font-size:15.5px; margin-bottom:6px; color:var(--maroon);}
+  .benefit-cell p{font-size:13px; line-height:1.6; color:var(--ink-soft);}
+
+  /* ===== No need to ===== */
+  .release{background:var(--cream-deep);}
+  .release-list{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .release-item{
+    background:#fff; border-radius:14px; padding:26px 22px;
+    border-left:6px solid var(--maroon);
+  }
+  .release-item .cross{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:28px; height:28px; border-radius:50%;
+    background:#F6DCE0; color:var(--maroon);
+    font-weight:800; font-size:15px; margin-bottom:12px;
+  }
+  .release-item h4{font-size:17px; margin-bottom:8px; color:var(--maroon);}
+  .release-item p{font-size:13.5px; line-height:1.6; color:var(--ink-soft);}
+
+  /* ===== Testimonials ===== */
+  .voices{background:var(--maroon);}
+  .voices .section-head h2{color:#fff;}
+  .voices .section-head p{color:rgba(255,255,255,0.78);}
+  .voices-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .voice-card{
+    background:#fff; border-radius:16px; padding:26px 22px;
+  }
+  .voice-card .stars{color:var(--turmeric-dark); font-size:15px; margin-bottom:14px; letter-spacing:2px;}
+  .voice-card p.quote{ font-size:14.5px; line-height:1.7; color:var(--ink); margin-bottom:18px; }
+  .voice-card .who-row{display:flex; align-items:center; gap:10px;}
+  .voice-card .avatar{
+    width:38px; height:38px; border-radius:50%;
+    background:var(--cream-deep); color:var(--maroon);
+    display:flex; align-items:center; justify-content:center;
+    font-weight:800; font-size:14px;
+  }
+  .voice-card .who{font-size:13.5px; font-weight:700; color:var(--maroon);}
+  .voice-card .where{font-size:11.5px; color:var(--ink-soft);}
+  .voices-note{ margin-top:24px; font-size:12px; color:rgba(255,255,255,0.65); max-width:700px; line-height:1.6; }
+
+  /* ===== FAQ ===== */
+  .faq{background:var(--cream);}
+  .faq-list{max-width:780px;}
+  .faq-item{ background:#fff; border-radius:12px; margin-bottom:12px; border:1px solid var(--line); overflow:hidden; }
+  .faq-q{
+    width:100%; background:none; border:none; text-align:right;
+    padding:18px 20px; font-size:15.5px; font-weight:700; color:var(--maroon);
+    cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px;
+    direction:rtl;
+  }
+  .faq-q span:first-child{direction:rtl; text-align:right; flex:1;}
+  .faq-q .plus{
+    font-size:20px; color:var(--turmeric-dark); flex-shrink:0;
+    width:28px; height:28px; border-radius:50%; background:var(--cream-deep);
+    display:flex; align-items:center; justify-content:center;
+    transition:transform 0.25s ease;
+  }
+  .faq-item.open .faq-q .plus{transform:rotate(45deg);}
+  .faq-a{ max-height:0; overflow:hidden; transition:max-height 0.3s ease; }
+  .faq-item.open .faq-a{max-height:260px;}
+  .faq-a p{ font-size:14px; line-height:1.75; color:var(--ink-soft); padding:0 20px 18px; }
+
+  /* ===== Lead form ===== */
+  .lead{background:var(--green-dark); border-top:4px solid var(--turmeric);}
+  .lead-panel{
+    background:#fff;
+    border-radius:20px;
+    padding:40px;
+    display:grid; grid-template-columns:0.9fr 1.1fr; gap:40px;
+  }
+  .lead-left h2{font-size:26px; margin-bottom:12px;}
+  .lead-left p{font-size:14.5px; line-height:1.7; color:var(--ink-soft); margin-bottom:20px;}
+  .lead-badges{display:flex; flex-direction:column; gap:10px;}
+  .lead-badge{display:flex; align-items:center; gap:10px; font-size:13.5px; color:var(--green-dark); font-weight:700;}
+  .lead-badge .ic{width:24px; height:24px; border-radius:50%; background:var(--cream-deep); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .lead-badge svg{width:13px; height:13px; color:var(--maroon);}
+
+  form{display:flex; flex-direction:column; gap:14px;}
+  .field label{display:block; font-size:13px; font-weight:700; color:var(--maroon); margin-bottom:6px;}
+  .field input, .field select{
+    width:100%; padding:13px 14px; border:2px solid var(--line); border-radius:8px;
+    font-family:'Noto Sans Devanagari','Poppins'; font-size:14.5px; background:var(--cream); color:var(--ink);
+  }
+  .field input:focus, .field select:focus{ outline:none; border-color:var(--maroon); }
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .submit-btn{
+    background:var(--maroon); color:#fff; border:none; border-radius:10px;
+    padding:16px; font-size:16px; font-weight:800; cursor:pointer; margin-top:4px;
+    box-shadow:0 6px 0 var(--maroon-dark);
+  }
+  .submit-btn:active{transform:translateY(3px); box-shadow:0 3px 0 var(--maroon-dark);}
+  .form-fine{font-size:11.5px; color:var(--ink-soft); margin-top:10px; line-height:1.5;}
+  .cod-badge{
+    display:inline-flex; align-items:center; gap:6px;
+    background:var(--turmeric); color:var(--maroon-dark);
+    font-size:12px; font-weight:800; padding:6px 12px; border-radius:20px; margin-top:10px;
+  }
+
+  /* ===== Footer ===== */
+  footer{ background:var(--maroon-dark); color:rgba(255,255,255,0.65); padding:32px 24px 24px; font-size:12px; }
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;}
+  footer .foot-logo{color:#fff; font-size:16px; font-weight:800;}
+  footer .legal{max-width:680px; line-height:1.7; color:rgba(255,255,255,0.5);}
+
+  /* ===== Sticky bottom CTA (mobile) ===== */
+  .sticky-cta{
+    position:fixed; bottom:0; left:0; right:0; z-index:60;
+    background:var(--maroon); padding:12px 16px;
+    display:none; align-items:center; justify-content:space-between; gap:12px;
+    box-shadow:0 -4px 14px rgba(0,0,0,0.18);
+  }
+  .sticky-cta .info{color:#fff; font-size:13px; font-weight:700;}
+  .sticky-cta .info .sub{font-size:11px; font-weight:500; opacity:0.85;}
+  .sticky-cta button{
+    background:var(--turmeric); color:var(--maroon-dark); border:none;
+    padding:11px 20px; border-radius:8px; font-weight:800; font-size:14px;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{max-width:320px; margin:0 auto; order:-1;}
+    .ritual-grid{grid-template-columns:1fr;}
+    .ing-grid{grid-template-columns:repeat(2,1fr);}
+    .benefits-grid{grid-template-columns:repeat(2,1fr);}
+    .release-list{grid-template-columns:1fr;}
+    .voices-grid{grid-template-columns:1fr;}
+    .lead-panel{grid-template-columns:1fr; padding:26px;}
+    .field-row{grid-template-columns:1fr;}
+    section{padding:42px 18px;}
+    .topbar-inner{padding:12px 18px;}
+    .sticky-cta{display:flex;}
+    body{padding-bottom:70px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="offer-strip">🎁 आज ऑर्डर करें — डिलीवरी चार्ज माफ़ + कैश ऑन डिलीवरी उपलब्ध</div>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="logo"><span class="leaf">🌿</span> वनजा वेलनेस</div>
+    <a href="#lead" class="topbar-cta">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.07-1.33A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.1-.45-4.38-1.23l-.31-.19-3.01.79.8-2.93-.2-.3A7.97 7.97 0 014 12c0-4.42 3.58-8 8-8s8 3.58 8 8-3.58 8-8 8z"/></svg>
+      बात करें
+    </a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow">दिन और रात का आयुर्वेदिक रूटीन</span>
+      <h1>रोज़मर्रा की भागदौड़ में भी <span class="accent">अपना ख्याल रखना</span> अब आसान</h1>
+      <p class="lede">वनजा एक daily wellness सप्लीमेंट है — एक कैप्सूल सुबह, एक रात को। न सख्त डाइट, न घंटों एक्सरसाइज़। बस अपनी रोज़ की दिनचर्या में जोड़ लीजिए।</p>
+      <div class="hero-points">
+        <div class="hero-point"><span class="tick">✓</span> रोज़ की एनर्जी और मेटाबॉलिज़्म के लिए सहायक</div>
+        <div class="hero-point"><span class="tick">✓</span> FSSAI लाइसेंस्ड फैक्ट्री में बना</div>
+        <div class="hero-point"><span class="tick">✓</span> कैश ऑन डिलीवरी पूरे भारत में उपलब्ध</div>
+      </div>
+      <div class="hero-ctas">
+        <button class="btn-primary" onclick="document.getElementById('lead').scrollIntoView({behavior:'smooth'})">अभी ऑर्डर करें</button>
+        <div class="price-tag"><span class="now">₹1,299</span><span class="was">₹1,899</span><br>1 महीने का पैक</div>
+      </div>
+      <p class="hero-disclaimer">⚠️ वनजा एक डाइटरी सप्लीमेंट है, दवा नहीं। यह किसी बीमारी का इलाज, रोकथाम या निदान नहीं करता। थायराइड, PCOD या किसी अन्य बीमारी के लिए कृपया डॉक्टर की सलाह लेना न छोड़ें।</p>
+    </div>
+    <div class="hero-visual" id="heroVisual"></div>
+  </div>
+</header>
+
+<div class="trust-strip">
+  <div class="wrap">
+    <div class="trust-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></span>FSSAI अप्रूव्ड</div>
+    <div class="trust-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></span>GMP सर्टिफाइड</div>
+    <div class="trust-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span>लैब टेस्टेड</div>
+    <div class="trust-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v8M8 3v8"/></svg></span>कैश ऑन डिलीवरी</div>
+  </div>
+</div>
+
+<section class="ritual" id="ritual">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">कैसे काम करता है</span>
+      <h2>दिन में एनर्जी, रात में आराम — दोनों का अपना फॉर्मूला</h2>
+      <p>शरीर का काम करने का तरीका दिन और रात में अलग होता है। इसलिए वनजा में दो फॉर्मूले हैं — एक सुबह के लिए, एक रात के लिए।</p>
+    </div>
+    <div class="ritual-grid">
+      <div class="ritual-card day">
+        <div class="icon-circle">☀️</div>
+        <span class="time">सुबह नाश्ते के साथ</span>
+        <h3>डे फॉर्मूला</h3>
+        <p>ग्रीन टी पॉलीफेनॉल्स और रेड ऑरेंज एक्सट्रैक्ट से बना — रोज़ की एनर्जी और सामान्य मेटाबॉलिज़्म बनाए रखने में मदद करता है, ताकि दोपहर बाद थकान कम महसूस हो।</p>
+      </div>
+      <div class="ritual-card night">
+        <div class="icon-circle">🌙</div>
+        <span class="time">रात सोने से पहले</span>
+        <h3>नाइट फॉर्मूला</h3>
+        <p>सीवीड से मिलने वाले फ्यूकोक्सैन्थिन और हल्के हर्बल एक्सट्रैक्ट के साथ — पाचन और अच्छी नींद में सहायक, ताकि सुबह उठने पर शरीर हल्का महसूस हो।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ingredients">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">असली सामग्री, बाहर से मंगाई गई</span>
+      <h2>4 देशों से चुनी गई शुद्ध जड़ी-बूटियाँ</h2>
+      <p>कोई मिलावट नहीं, कोई सस्ता फिलर नहीं — हर सामग्री वहीं से ली गई है जहाँ वो सबसे अच्छी उगती है।</p>
+    </div>
+    <div class="ing-grid">
+      <div class="ing-card">
+        <div class="ring">🫐</div>
+        <span class="origin-pill">ब्राज़ील · अमेज़न</span>
+        <h4>रेनफॉरेस्ट बेरी एक्सट्रैक्ट</h4>
+        <p>एंटीऑक्सीडेंट से भरपूर, अमेज़न के आदिवासियों द्वारा पारंपरिक रूप से इस्तेमाल की जाने वाली बेरी।</p>
+      </div>
+      <div class="ing-card">
+        <div class="ring">🍃</div>
+        <span class="origin-pill">ताइवान · पहाड़ी</span>
+        <h4>फॉर्मोसा ऊलोंग पत्ती</h4>
+        <p>ऊँचाई पर उगने वाली ऊलोंग चाय की पत्ती, रोज़ के मेटाबॉलिज़्म को सहारा देने के लिए जानी जाती है।</p>
+      </div>
+      <div class="ing-card">
+        <div class="ring">🍊</div>
+        <span class="origin-pill">सिसिली · इटली</span>
+        <h4>रेड ऑरेंज एक्सट्रैक्ट</h4>
+        <p>ज्वालामुखी मिट्टी में उगने वाला खास संतरा, एंटीऑक्सीडेंट गुणों के लिए जाना जाता है।</p>
+      </div>
+      <div class="ing-card">
+        <div class="ring">🌊</div>
+        <span class="origin-pill">पैटागोनिया</span>
+        <h4>डीप-सी फ्यूकोक्सैन्थिन</h4>
+        <p>ठंडे समुद्र की काई से मिलने वाला तत्व, फॉर्मूले के एंटीऑक्सीडेंट सपोर्ट को पूरा करता है।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">क्या उम्मीद रखें</span>
+      <h2>सहयोग देता है, बेबुनियाद वादे नहीं करता</h2>
+      <p>वनजा आपके शरीर के सामान्य कामकाज में मदद करता है — संतुलित खानपान और सामान्य गतिविधि के साथ, उनकी जगह नहीं।</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-cell">
+        <div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/></svg></div>
+        <h4>दिनभर एनर्जी</h4>
+        <p>सामान्य मेटाबॉलिज़्म को सहारा, ताकि एनर्जी ज़्यादा स्थिर महसूस हो।</p>
+      </div>
+      <div class="benefit-cell">
+        <div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21c-4-3.5-7-7-7-11a7 7 0 0114 0c0 4-3 7.5-7 11z"/></svg></div>
+        <h4>एंटीऑक्सीडेंट सपोर्ट</h4>
+        <p>4 प्राकृतिक स्रोतों से पॉलीफेनॉल्स, एक ही रूटीन में।</p>
+      </div>
+      <div class="benefit-cell">
+        <div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h4>अच्छी नींद में मदद</h4>
+        <p>नाइट फॉर्मूला पाचन और आरामदायक नींद के लिए बनाया गया है।</p>
+      </div>
+      <div class="benefit-cell">
+        <div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/></svg></div>
+        <h4>लैब-टेस्टेड शुद्धता</h4>
+        <p>हर बैच भेजने से पहले जाँचा जाता है, रिपोर्ट माँगने पर उपलब्ध।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="release">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">कोई सख्ती नहीं</span>
+      <h2>वनजा आपकी रोज़ की ज़िंदगी में फिट होता है</h2>
+    </div>
+    <div class="release-list">
+      <div class="release-item">
+        <span class="cross">✕</span>
+        <h4>कोई कड़ी डाइट नहीं</h4>
+        <p>अपना रोज़ का घर का खाना खाते रहिए। वनजा संतुलित खानपान के साथ मदद करने के लिए बना है, खाना छोड़ने के लिए नहीं।</p>
+      </div>
+      <div class="release-item">
+        <span class="cross">✕</span>
+        <h4>घंटों जिम जाने की ज़रूरत नहीं</h4>
+        <p>अपनी सुविधा अनुसार चलिए-फिरिए। फॉर्मूला भारी एक्सरसाइज़ पर निर्भर नहीं करता।</p>
+      </div>
+      <div class="release-item">
+        <span class="cross">✕</span>
+        <h4>कैलोरी गिनने की झंझट नहीं</h4>
+        <p>बस 2 कैप्सूल, दिन में 2 बार — सुबह नाश्ते के साथ, रात सोने से पहले। इतना ही पूरा रूटीन है।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="voices">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">हमारे ग्राहकों की राय</span>
+      <h2>महिलाएँ क्या कह रही हैं</h2>
+    </div>
+    <div class="voices-grid">
+      <div class="voice-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"बस 2 कैप्सूल लेने होते हैं, कुछ सोचना नहीं पड़ता। रात वाला अब मेरी सोने से पहले की आदत बन गया है।"</p>
+        <div class="who-row">
+          <div class="avatar">प्र</div>
+          <div><div class="who">प्रिया मेहता</div><div class="where">पुणे · वेरिफाइड खरीदार</div></div>
+        </div>
+      </div>
+      <div class="voice-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"3 महीने हो गए हैं, दोपहर बाद की थकान पहले से कम महसूस होती है। खाना-पीना नॉर्मल ही रखा है।"</p>
+        <div class="who-row">
+          <div class="avatar">अ</div>
+          <div><div class="who">अनन्या राव</div><div class="where">हैदराबाद · वेरिफाइड खरीदार</div></div>
+        </div>
+      </div>
+      <div class="voice-card">
+        <div class="stars">★★★★☆</div>
+        <p class="quote">"अच्छा लगा कि कंपनी ने साफ बताया कि यह सप्लीमेंट है, जादू की दवा नहीं। शुरू से ही उम्मीदें सही रखीं।"</p>
+        <div class="who-row">
+          <div class="avatar">क</div>
+          <div><div class="who">कविता शर्मा</div><div class="where">दिल्ली · वेरिफाइड खरीदार</div></div>
+        </div>
+      </div>
+    </div>
+    <p class="voices-note">नोट: नतीजे हर व्यक्ति में अलग हो सकते हैं। ये ग्राहकों की राय हैं, किसी नतीजे की गारंटी नहीं। वनजा एक डाइटरी सप्लीमेंट है, यह किसी बीमारी का इलाज नहीं करता।</p>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">अक्सर पूछे जाने वाले सवाल</span>
+      <h2>आपके सवालों के जवाब</h2>
+    </div>
+    <div class="faq-list" id="faqList">
+      <div class="faq-item open">
+        <button class="faq-q"><span>क्या वनजा एक दवा है?</span><span class="plus">+</span></button>
+        <div class="faq-a"><p>नहीं। वनजा एक डाइटरी सप्लीमेंट है, प्राकृतिक एक्सट्रैक्ट्स से बना हुआ। यह थायराइड, PCOD या लिवर से जुड़ी किसी भी बीमारी का इलाज, रोकथाम या निदान नहीं करता। अगर आपको कोई बीमारी पहले से डायग्नोज़ हुई है, तो कृपया अपने डॉक्टर का इलाज जारी रखें।</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>इसे कैसे लेना है?</span><span class="plus">+</span></button>
+        <div class="faq-a"><p>एक कैप्सूल सुबह नाश्ते के साथ (डे फॉर्मूला), और एक कैप्सूल रात सोने से लगभग 30 मिनट पहले (नाइट फॉर्मूला)। बस यही पूरा रूटीन है।</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>क्या मैं अपनी मौजूदा दवाई के साथ इसे ले सकती हूँ?</span><span class="plus">+</span></button>
+        <div class="faq-a"><p>अगर आप थायराइड, PCOD, डायबिटीज़ या किसी अन्य बीमारी की दवाई ले रही हैं, तो कृपया वनजा शुरू करने से पहले अपने डॉक्टर से सलाह ज़रूर लें।</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>क्या प्रेगनेंसी या ब्रेस्टफीडिंग में ले सकते हैं?</span><span class="plus">+</span></button>
+        <div class="faq-a"><p>अगर आप गर्भवती हैं, गर्भधारण की योजना बना रही हैं, या स्तनपान करा रही हैं, तो शुरू करने से पहले डॉक्टर से सलाह लेने की सलाह दी जाती है।</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>डिलीवरी और पेमेंट कैसे होगी?</span><span class="plus">+</span></button>
+        <div class="faq-a"><p>पूरे भारत में डिलीवरी उपलब्ध है। ऑनलाइन पेमेंट के साथ-साथ कैश ऑन डिलीवरी (COD) का विकल्प भी है। डिलीवरी में आमतौर पर 4-6 दिन लगते हैं।</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lead" id="lead">
+  <div class="wrap">
+    <div class="lead-panel">
+      <div class="lead-left">
+        <span class="eyebrow">ऑर्डर करें</span>
+        <h2>आज ही अपना पैक बुक करें</h2>
+        <p>नीचे अपनी जानकारी भरें, हमारी टीम आपको कॉल करके पूरी जानकारी देगी — कोई जल्दबाज़ी नहीं, कोई टाइमर प्रेशर नहीं।</p>
+        <div class="lead-badges">
+          <div class="lead-badge"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></span>आपकी जानकारी पूरी तरह सुरक्षित</div>
+          <div class="lead-badge"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></span>ऑर्डर करने की कोई बाध्यता नहीं</div>
+          <div class="lead-badge"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span>पूरे भारत में डिलीवरी</div>
+        </div>
+        <div class="cod-badge">💵 कैश ऑन डिलीवरी उपलब्ध</div>
+      </div>
+      <form onsubmit="handleSubmit(event)">
+        <div class="field-row">
+          <div class="field">
+            <label for="name">आपका नाम</label>
+            <input type="text" id="name" required placeholder="पूरा नाम">
+          </div>
+          <div class="field">
+            <label for="phone">फ़ोन नंबर</label>
+            <input type="tel" id="phone" required placeholder="10 अंकों का मोबाइल नंबर">
+          </div>
+        </div>
+        <div class="field">
+          <label for="city">शहर</label>
+          <input type="text" id="city" placeholder="आपका शहर">
+        </div>
+        <div class="field">
+          <label for="goal">आप किसमें मदद चाहती हैं?</label>
+          <select id="goal">
+            <option>रोज़ की एनर्जी</option>
+            <option>सामान्य वेलनेस रूटीन</option>
+            <option>नींद और आराम</option>
+            <option>कुछ और</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="condition">क्या आपको कोई बीमारी है जिसका इलाज डॉक्टर से चल रहा है?</label>
+          <select id="condition">
+            <option>नहीं</option>
+            <option>हाँ — थायराइड</option>
+            <option>हाँ — PCOD/PCOS</option>
+            <option>हाँ — अन्य</option>
+          </select>
+        </div>
+        <button type="submit" class="submit-btn">कॉल बैक के लिए अनुरोध करें</button>
+        <p class="form-fine">सबमिट करने पर आप वनजा वेलनेस से इस प्रोडक्ट के बारे में संपर्क के लिए सहमत होते हैं। हम आपकी जानकारी कभी नहीं बेचते। वनजा एक डाइटरी सप्लीमेंट है, चिकित्सा उपचार का विकल्प नहीं।</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-logo">वनजा वेलनेस</div>
+    <div class="legal">ये दावे FSSAI द्वारा मूल्यांकित नहीं किए गए हैं। यह प्रोडक्ट किसी बीमारी का निदान, इलाज या रोकथाम करने के लिए नहीं है। इस्तेमाल से पहले डॉक्टर से सलाह लें, खासकर अगर आप गर्भवती हैं, स्तनपान करा रही हैं, या किसी बीमारी का इलाज करा रही हैं। © 2026 वनजा वेलनेस।</div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <div class="info">₹1,299 / महीना<div class="sub">मुफ़्त डिलीवरी + COD उपलब्ध</div></div>
+  <button onclick="document.getElementById('lead').scrollIntoView({behavior:'smooth'})">अभी ऑर्डर करें</button>
+</div>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+
+  function handleSubmit(e){
+    e.preventDefault();
+    const btn = e.target.querySelector('.submit-btn');
+    btn.textContent = 'अनुरोध मिल गया ✓';
+    btn.style.background = 'var(--green-dark)';
+    e.target.querySelectorAll('input,select').forEach(el=>el.disabled = true);
+  }
+
+  document.getElementById('heroVisual').innerHTML = `
+  <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="g1" cx="50%" cy="35%" r="65%">
+        <stop offset="0%" stop-color="#E8A33D" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="#E8A33D" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <circle cx="250" cy="250" r="220" fill="url(#g1)"/>
+    <circle cx="250" cy="250" r="180" fill="#fff" stroke="#F6DCE0" stroke-width="2"/>
+    <g transform="translate(250,250)">
+      <ellipse cx="0" cy="110" rx="120" ry="16" fill="#8B2635" opacity="0.10"/>
+      <rect x="-50" y="-70" width="100" height="150" rx="16" fill="#FFF8EC" stroke="#E8A33D" stroke-width="3"/>
+      <rect x="-50" y="-70" width="100" height="50" rx="16" fill="#8B2635"/>
+      <rect x="-50" y="-30" width="100" height="2" fill="#8B2635" opacity="0.15"/>
+      <text x="0" y="-42" text-anchor="middle" font-family="Poppins, sans-serif" font-size="13" font-weight="800" fill="#FFF8EC">वनजा</text>
+      <text x="0" y="10" text-anchor="middle" font-family="Noto Sans Devanagari" font-size="11" font-weight="700" fill="#3D6B47">डे फॉर्मूला</text>
+      <text x="0" y="32" text-anchor="middle" font-family="Noto Sans Devanagari" font-size="11" font-weight="700" fill="#8B2635">नाइट फॉर्मूला</text>
+      <circle cx="-90" cy="20" r="38" fill="#FFF1D6"/>
+      <text x="-90" y="30" text-anchor="middle" font-size="28">☀️</text>
+      <circle cx="92" cy="-50" r="32" fill="#F6DCE0"/>
+      <text x="92" y="-39" text-anchor="middle" font-size="24">🌙</text>
+      <circle cx="85" cy="80" r="24" fill="#E0EEE3"/>
+      <text x="85" y="89" text-anchor="middle" font-size="18">🌿</text>
+    </g>
+  </svg>`;
+</script>
+
+</body>
+</html>
